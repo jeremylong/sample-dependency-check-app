@@ -1,22 +1,38 @@
 // Top-level build file where you can add configuration options common to all sub-projects/modules.
+version = '1.0.0'
 
 buildscript {
 
     repositories {
+        maven {
+            name 'OWASP dependency-check snapshot'
+            url 'https://dependencycheck.jfrog.io/dependencycheck/libs-snapshot'
+        }
+        maven {
+            name 'OWASP dependency-check release'
+            url 'https://dependencycheck.jfrog.io/dependencycheck/libs-release'
+        }
         google()
         jcenter()
     }
     dependencies {
-        classpath 'com.android.tools.build:gradle:3.0.1'
-        classpath 'org.owasp:dependency-check-gradle:3.0.2'
+        classpath 'com.android.tools.build:gradle:3.1.0'
+        classpath 'org.owasp:dependency-check-gradle:3.3.0-SNAPSHOT'
 
         // NOTE: Do not place your application dependencies here; they belong
         // in the individual module build.gradle files
     }
 }
-
 allprojects {
     repositories {
+        maven {
+            name 'OWASP dependency-check snapshot'
+            url 'https://dependencycheck.jfrog.io/dependencycheck/libs-snapshot'
+        }
+        maven {
+            name 'OWASP dependency-check release'
+            url 'https://dependencycheck.jfrog.io/dependencycheck/libs-release'
+        }
         google()
         jcenter()
     }
